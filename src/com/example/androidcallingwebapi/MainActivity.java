@@ -12,18 +12,37 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private ListView productList;
+	private Button productsButton;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		this.productList = (ListView) findViewById(R.id.product_list);
-		LoadAllProductsTask loadAllProductsTask = new LoadAllProductsTask(MainActivity.this.getApplicationContext());
+        this.productsButton = (Button)this.findViewById(R.id.product_button);
+        
+        this.productsButton.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				LoadAllProducts();
+			}
+		});  
+        
+		LoadAllProducts();
+	}
+
+	private void LoadAllProducts() {
+		LoadAllProductsTask loadAllProductsTask = new LoadAllProductsTask(MainActivity.this);
 		Product[] products = null;
 		try {
 			loadAllProductsTask.execute();
@@ -56,6 +75,11 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	public void alert (String msg)
+    {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+    }
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

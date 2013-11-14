@@ -2,18 +2,15 @@
 <resources>
 
 	<string name="app_name">Prodcts</string>
-	<string name="looking_for_tracks">Search Products</string>
+	<string name="looking_for_products">Search Products</string>
 	<string name="no_products">No products found.</string>
 
-	<string name="track_button_label">Top Tracks</string>
-	<string-array name="metros">
-		<item>Denver</item>
-		<item>Detroit</item>
-		<item>Miami</item>
-		<item>Orlando</item>
-		<item>Phoenix</item>
-		<item>Sacramento</item>
-		<item>Seattle</item>
+	<string name="product_button_label">Load All Products</string>
+	<string-array name="productIds">
+	    <item>All</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
 	</string-array>
 	
     <string name="action_settings">Settings</string>

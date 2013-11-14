@@ -9,7 +9,7 @@ package com.example.androidcallingwebapi;
 
 public final class R {
     public static final class array {
-        public static final int metros=0x7f070000;
+        public static final int productIds=0x7f070000;
     }
     public static final class attr {
     }
@@ -63,13 +63,13 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout01=0x7f0a0000;
         public static final int action_settings=0x7f0a0008;
-        public static final int background=0x7f0a0004;
-        public static final int metro=0x7f0a0001;
-        public static final int product_id=0x7f0a0005;
-        public static final int product_list=0x7f0a0003;
-        public static final int product_name=0x7f0a0006;
-        public static final int product_price=0x7f0a0007;
-        public static final int track_button=0x7f0a0002;
+        public static final int background=0x7f0a0003;
+        public static final int product_button=0x7f0a0001;
+        public static final int product_id=0x7f0a0004;
+        public static final int product_list=0x7f0a0002;
+        public static final int product_name=0x7f0a0005;
+        public static final int product_price=0x7f0a0006;
+        public static final int track_button=0x7f0a0007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -83,9 +83,9 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060005;
         public static final int input_message=0x7f060006;
-        public static final int looking_for_tracks=0x7f060001;
+        public static final int looking_for_products=0x7f060001;
         public static final int no_products=0x7f060002;
-        public static final int track_button_label=0x7f060003;
+        public static final int product_button_label=0x7f060003;
     }
     public static final class style {
         /** 

@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import com.example.androidcallingwebapi.JSONHttpClient;
+import com.example.androidcallingwebapi.MainActivity;
+import com.example.androidcallingwebapi.R;
+import com.example.androidcallingwebapi.clients.JSONHttpClient;
 import com.example.androidcallingwebapi.models.Product;
 import com.example.androidcallingwebapi.util.ServiceUrl;
 
@@ -16,12 +21,14 @@ import android.util.Log;
 
 public class LoadAllProductsTask extends AsyncTask<String, String, Product[]> {
 
-	public Context context;
-	private ProgressDialog progressDialog;
+	private ProgressDialog progDialog;
+	private Context context;
+	private MainActivity activity;
 	
-	public LoadAllProductsTask(Context context) {
+	public LoadAllProductsTask(MainActivity activity) {
 		super();
-		this.context = context;
+		this.activity = activity;
+		this.context = this.activity.getApplicationContext();
 	}
 
     @Override
@@ -37,11 +44,13 @@ public class LoadAllProductsTask extends AsyncTask<String, String, Product[]> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();    //To change body of overridden methods use File | Settings | File Templates.
-        /*
-        progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("Loading products. Please wait...");
-        progressDialog.show();
-        */
+        progDialog = ProgressDialog.show(this.activity, "Search", this.context.getResources().getString(R.string.looking_for_products) , true, false);
     }
 
+    @Override
+    protected void onPostExecute(Product[] result) 
+    {
+    	super.onPostExecute(result);
+    	progDialog.dismiss();   
+    }
 }
