@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Prodcts</string>
+	<string name="looking_for_tracks">Search Products</string>
+	<string name="no_products">No products found.</string>
+
+	<string name="track_button_label">Top Tracks</string>
+	<string-array name="metros">
+		<item>Denver</item>
+		<item>Detroit</item>
+		<item>Miami</item>
+		<item>Orlando</item>
+		<item>Phoenix</item>
+		<item>Sacramento</item>
+		<item>Seattle</item>
+	</string-array>
+	
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="input_message">input a number</string>
+</resources>
